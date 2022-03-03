@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * List<List<Integer>>. It add only those sum in list where key in map is
  * greater than a particular number.
  * 
- * @author User
+ * @author Arvind Kumar
  *
  */
 
@@ -22,7 +22,12 @@ public class NagarroTest {
 
 		int n = 5;
 		Map<Integer, List<List<Integer>>> map = getMap();
+		List<Integer> sumList = getListFor2DArraySum(n, map);
+		System.out.println(sumList);
 
+	}
+
+	private static List<Integer> getListFor2DArraySum(int n, Map<Integer, List<List<Integer>>> map) {
 		List<Integer> sumList = new ArrayList<>();
 		map.forEach((k, v) -> {
 
@@ -34,9 +39,7 @@ public class NagarroTest {
 
 			}
 		});
-
-		System.out.println(sumList);
-
+		return sumList;
 	}
 
 	private static Map<Integer, List<List<Integer>>> getMap() {
